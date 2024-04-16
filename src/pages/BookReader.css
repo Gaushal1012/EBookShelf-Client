@@ -1,0 +1,85 @@
+.react-pdf__Page__textContent {
+  display: none !important;
+  height: 0px;
+  width: 0px;
+}
+
+.react-pdf__Page__annotations {
+  display: none !important;
+}
+
+.react-pdf__Page {
+  width: 40vw;
+}
+
+.document {
+  margin-bottom: 30px;
+  width: 72.5vw;
+  height: 120vh;
+  border: 0px solid gray;
+  border-radius: 10px;
+  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-reader {
+  margin-top: 15px;
+}
+
+.react-pdf__Page__canvas {
+  width: 80vh !important;
+  height: 100vh !important;
+  margin: 0 0 !important;
+}
+
+.react-pdf__Page__canvas {
+  object-fit: contain !important;
+}
+
+.book-reader {
+  position: relative;
+}
+
+.marginDiv {
+  margin: 10px 0px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  align-items: center;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 10px;
+  width: 100%;
+}
+
+.controls button {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button p {
+  color: white;
+  margin: 5px 5px;
+}
+
+.controls button:disabled {
+  filter: blur(1px);
+}
+
+.controls button:disabled {
+  opacity: 0.9;
+}
+
+.book-reader .bookInfoLink{
+    cursor: pointer;
+}
