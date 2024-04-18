@@ -5,7 +5,9 @@ export const Shelf = () => {
   const userdata = JSON.parse(localStorage.getItem("userInfo"));
   const fetchShelfData = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/getshelf/${userdata.userId}`);
+      const response = await fetch(
+        `http://localhost:5000/getshelf/${userdata.userId}`
+      );
       const data = await response.json();
       console.log(data.bookList);
       SetBookShelf(data.bookList);
@@ -14,15 +16,30 @@ export const Shelf = () => {
     }
   };
 
-  const RemoveBook = (id) =>{
+  const RemoveBook = async (id) => {
     //Remove Book
-    console.log("Item deleted");
-  }
+    try {
+      const response = await fetch(`http://localhost:5000/deleteshelf/${id}`, {
+        method: "DELETE",
+      });
+      if (response.ok) {
+        console.log("Item deleted");
+        // Remove the deleted project from the project state array
+        SetBookShelf((prevBookShelf) =>
+          prevBookShelf.filter((book) => book.shelf_id !== id)
+        );
+      } else {
+        console.log("Failed to delete item");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const EditBook = (id) =>{
+  const EditBook = (id) => {
     //Edit Book
     console.log("Item edited");
-  }
+  };
 
   useEffect(() => {
     fetchShelfData();
@@ -57,10 +74,20 @@ export const Shelf = () => {
                     <td>{item.returndate.substring(0, 10)}</td>
                     <td>
                       <div>
-                        <div onClick={()=>{EditBook(item.shelf_id)}} className="edit">
+                        <div
+                          onClick={() => {
+                            EditBook(item.shelf_id);
+                          }}
+                          className="edit"
+                        >
                           <i class="fa-solid fa-pen-to-square"></i>
                         </div>
-                        <div onClick={()=>{RemoveBook(item.shelf_id)}} className="delete">
+                        <div
+                          onClick={() => {
+                            RemoveBook(item.shelf_id);
+                          }}
+                          className="delete"
+                        >
                           <i class="fa-solid fa-trash"></i>
                         </div>
                       </div>
