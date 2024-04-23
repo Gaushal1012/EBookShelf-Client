@@ -51,12 +51,12 @@ export const Register = () => {
         formDataToSend.append("password", formData.password);
         formDataToSend.append("confirmpassword", formData.confirmpassword);
         formDataToSend.append("role", formData.role);
-  
+
         const req = await fetch("http://localhost:5000/addUsers", {
           method: "POST",
           body: formDataToSend,
         });
-  
+
         console.log(req);
         setFormData(initialFormData);
       }
@@ -65,7 +65,7 @@ export const Register = () => {
       alert("All fields must be required");
     }
   };
-  
+
   return (
     <>
       <div className="mountain">

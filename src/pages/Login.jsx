@@ -1,4 +1,3 @@
-import { Cookie } from "@mui/icons-material";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -51,7 +50,7 @@ export const Login = () => {
             <h3>S h e l f</h3>
           </div>
           <div className="heading">
-            <p>Registration</p>
+            <p>Login</p>
             <p className="generalInfo">For Both Staff & Employees</p>
           </div>
           {/* form start*/}
@@ -91,7 +90,7 @@ export const Login = () => {
               </label>
               <Link
                 style={{ color: "gray", fontSize: "11px", marginTop: "15px" }}
-                to="/"
+                to="/forgotPassword"
               >
                 Forgot password?
               </Link>

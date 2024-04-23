@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "../components/Footer";
-// import { Header } from "../components/Header";
 import "./BookReader.css";
 import { ReaderModal } from "../components/Modal/ReaderModal";
 import { useParams } from "react-router-dom";
@@ -10,7 +9,6 @@ export const BookReader = () => {
   const [book, SetBook] = useState([]);
   const { id } = useParams();
   console.log(id);
-  // console.log(book[0].book_pdfFile);
   const fetchUserData = async () => {
     try {
       const response = await fetch(`http://localhost:5000/book/${id}`);
@@ -40,11 +38,9 @@ export const BookReader = () => {
             <Footer />
           </div>
           <div className="rightPart border border-red-500">
-            {book.length > 0 && ( // Add this condition to check if book[0] exists
+            {book.length > 0 && (
               <div>
-                <ReaderModal
-                  Pdf={book[0]?.book_pdfFile} // Use optional chaining to avoid errors if book[0] is undefined
-                />
+                <ReaderModal Pdf={book[0]?.book_pdfFile} />
               </div>
             )}
           </div>

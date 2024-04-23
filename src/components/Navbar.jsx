@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
   const history = useNavigate();
+  const userdata = JSON.parse(localStorage.getItem("userInfo"));
+  console.log(userdata);
   const HandleClickHome = () => {
     history("/booklist");
   };
@@ -50,6 +52,15 @@ export const Navbar = () => {
           <img src={ContributeIcon} alt="contribute" />
           <p>Contribute</p>
         </div>
+        {userdata.role==1?<div
+          onClick={() => {
+            HandleClickContribute();
+          }}
+          className="navLink"
+        >
+          <i style={{color:"black",fontSize:"15px"}} class="fa-solid fa-cloud-arrow-up"></i>
+          <p>Manage Book</p>
+        </div>:null}
       </div>
     </>
   );

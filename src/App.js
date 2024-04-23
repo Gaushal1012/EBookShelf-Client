@@ -10,6 +10,7 @@ import { Contribution } from "./pages/Contribution";
 import { UserProfile } from "./pages/UserProfile";
 import { Profile } from "./pages/Profile";
 import { BookShelf } from "./pages/BookShelf";
+import { ForgotPassword } from "./pages/ForgotPassword";
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
         </Routes>
         <Routes>
           <Route exact path="/myshelf" element={<BookShelf/>}></Route>
+        </Routes>
+        <Routes>
+          <Route exact path="/forgotPassword" element={<ForgotPassword/>}></Route>
         </Routes>
       </Router>
     </>

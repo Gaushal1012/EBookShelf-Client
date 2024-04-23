@@ -10,8 +10,8 @@ import { NewsRack } from "../components/NewsRack";
 import Loader from "../loader.gif";
 
 export const BookList = () => {
-  // const [userData, setUserData] = useState([]);
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true);
+  const [user, SetUser] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
 
   const userdata = JSON.parse(localStorage.getItem("userData"));
@@ -27,6 +27,7 @@ export const BookList = () => {
           console.log(data.userInfo);
           // setUserData(data.userInfo);
           localStorage.setItem("userInfo", JSON.stringify(data.userInfo));
+          SetUser(true);
         } else {
           console.error("Failed to fetch user data");
         }
@@ -36,7 +37,6 @@ export const BookList = () => {
         setTimeout(() => {
           setLoading(false);
         }, 2000);
-        // setLoading(false); // Set loading to false when data fetching is complete
       }
     };
 
@@ -59,7 +59,7 @@ export const BookList = () => {
               </h2>
               <h3 className="text-2xl">S h e l f</h3>
             </div>
-            <Navbar />
+            {user && <Navbar />}
             <Footer />
           </div>
           <div className="rightPart border border-red-500">

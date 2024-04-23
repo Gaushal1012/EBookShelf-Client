@@ -79,7 +79,12 @@ export const Header = ({ setSearchQuery }) => {
             </div>
             <div className="searctSection">
               <p>
-                <input onChange={handleSearch} className="input" type="text" placeholder="Search" />
+                <input
+                  onChange={handleSearch}
+                  className="input"
+                  type="text"
+                  placeholder="Search"
+                />
               </p>
               <i
                 style={{ color: "rgb(255, 115, 0)" }}
@@ -92,12 +97,6 @@ export const Header = ({ setSearchQuery }) => {
                 style={{ color: "rgb(255, 115, 0)" }}
                 class="fa-solid fa-qrcode"
               ></i>
-              {/* <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-qrcode"></i>
-            
-            
-            
-             */}
             </div>
           </div>
 
