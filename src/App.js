@@ -11,6 +11,8 @@ import { UserProfile } from "./pages/UserProfile";
 import { Profile } from "./pages/Profile";
 import { BookShelf } from "./pages/BookShelf";
 import { ForgotPassword } from "./pages/ForgotPassword";
+import { ManageBook } from "./pages/ManageBook";
+import { EditBook } from "./pages/EditBook";
 
 function App() {
   return (
@@ -45,6 +47,12 @@ function App() {
         </Routes>
         <Routes>
           <Route exact path="/forgotPassword" element={<ForgotPassword/>}></Route>
+        </Routes>
+        <Routes>
+          <Route exact path="/managebook" element={<ManageBook/>}></Route>
+        </Routes>
+        <Routes>
+          <Route exact path="/edit/:id" element={<EditBook/>}></Route>
         </Routes>
       </Router>
     </>

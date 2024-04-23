@@ -18,6 +18,9 @@ export const Navbar = () => {
   const HandleClickMyShelf = () => {
     history("/myshelf");
   };
+  const HandleClickManageBook = () => {
+    history("/managebook");
+  };
   return (
     <>
       <div className="navbar">
@@ -54,7 +57,7 @@ export const Navbar = () => {
         </div>
         {userdata.role==1?<div
           onClick={() => {
-            HandleClickContribute();
+            HandleClickManageBook();
           }}
           className="navLink"
         >
