@@ -64,7 +64,7 @@ export const Header = ({ setSearchQuery }) => {
     <>
       <div className="header">
         <div
-          style={{ display: "flex", gap: "10px" }}
+          style={{ display: "flex", gap: "15px" }}
           className="h-10 bg-grey-500"
         >
           <div className="h-8 w-2/6 border border-black rounded-lg searchbar">

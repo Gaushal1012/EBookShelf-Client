@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { styled } from "@mui/material/styles";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import ContributeIcon from "../contributeIcon.png";
 import { useNavigate } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
@@ -83,6 +81,10 @@ export const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Retrieve JWT token from localStorage
+      const jwtToken = localStorage.getItem("authToken");
+      console.log(jwtToken);
+
       const formData = new FormData();
       formData.append("userId", userInfo.user_id);
       formData.append("username", userInfo.username);
@@ -92,8 +94,13 @@ export const Profile = () => {
       formData.append("bio", userInfo.bio);
       formData.append("profileimg", profilePhoto);
 
+      // Create headers object and add Authorization header with JWT token
+      const headers = new Headers();
+      headers.append("Authorization", `Bearer ${jwtToken}`);
+
       const response = await fetch("http://localhost:5000/UpdateUsers", {
         method: "PUT",
+        headers: headers,
         body: formData,
       });
 

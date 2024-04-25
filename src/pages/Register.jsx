@@ -16,29 +16,6 @@ export const Register = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  //Add/Cerate a new project
-  // const handleSubmit = async (e) => {
-  //   try {
-  //     e.preventDefault();
-  //     if (formData.password !== formData.confirmpassword) {
-  //       alert("your confirm password is not same as your pasword");
-  //     } else {
-  //       const req = await fetch("http://localhost:5000/addUsers", {
-  //         method: "POST",
-  //         headers: {
-  //           "Content-Type": "application/json",
-  //         },
-  //         body: JSON.stringify(formData),
-  //       });
-  //       console.log(req);
-  //       setFormData(initialFormData);
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //     alert("All Field must be required");
-  //   }
-  // };
-
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();

@@ -24,13 +24,13 @@ export const Login = () => {
         body: JSON.stringify(formData),
       });
       if (response.ok) {
-        // Login successful, redirect user or perform any action
         localStorage.setItem("userData", JSON.stringify(formData));
-        console.log("Login successful");
+        const responseData = await response.json();
+        localStorage.setItem("authToken", responseData.token);
+        console.log(responseData.token);
         alert('login successfully');
         history("/booklist");
       } else {
-        // Login failed, display error message
         const errorData = await response.json();
         alert("login failed");
         console.error("Login failed:", errorData.message);

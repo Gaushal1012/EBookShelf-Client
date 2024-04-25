@@ -296,7 +296,7 @@ h3 {
   width: 35%;
   border: 1px solid rgb(255, 115, 0);
   border-radius: 10px;
-  height: 30px;
+  height: 35px;
   background-color: white;
 }
 
@@ -310,7 +310,7 @@ h3 {
   background-color: rgb(209, 208, 208);
   border: 0px solid gray;
   border-radius: 9px 0px 0px 9px;
-  height: 30px;
+  height: 35px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -334,7 +334,7 @@ h3 {
 .searctSection {
   display: flex;
   align-items: center;
-  height: 30px;
+  height: 35px;
 }
 
 .searctSection p {
@@ -350,7 +350,7 @@ h3 {
   border: 1px solid rgb(255, 115, 0);
   border-radius: 10px;
   padding: 0px 5px;
-  height: 30px;
+  height: 35px;
   background-color: white;
 }
 
@@ -368,7 +368,7 @@ h3 {
   border: 1px solid rgb(255, 115, 0);
   border-radius: 10px;
   padding: 0px 5px;
-  height: 30px;
+  height: 35px;
   background-color: white;
 }
 
@@ -392,7 +392,7 @@ h3 {
   border: 1px solid rgb(255, 115, 0);
   border-radius: 10px;
   padding: 0px 5px;
-  height: 30px;
+  height: 35px;
   background-color: white;
 }
 
@@ -404,7 +404,7 @@ h3 {
   /* border: 1px solid black; */
   /* border: 1px solid rgb(255, 115, 0); */
   border-radius: 50%;
-  height: 20px;
+  height: 25px;
   /* background-color: black; */
 }
 
@@ -1228,7 +1228,7 @@ select::after {
 }
 
 .bookshelf-table {
-  width: 98%;
+  width: 100%;
   border-collapse: collapse;
   margin-bottom: 20px;
 }
@@ -1291,3 +1291,54 @@ td div .edit{
   align-items: center;
 }
 
+.editBookForm {
+  /* max-width: 500px; */
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.editBookForm form{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0px 15px;
+}
+
+.editBookForm .form-group {
+  margin-bottom: 20px;
+}
+
+.editBookForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.editBookForm input[type="text"],
+.editBookForm input[type="number"],
+.editBookForm input[type="file"],
+.editBookForm textarea,
+.editBookForm select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.editBookForm input[type="file"] {
+  background-color: white;
+}
+
+.editBookForm button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.editBookForm button[type="submit"]:hover {
+  background-color: #0056b3;
+}
